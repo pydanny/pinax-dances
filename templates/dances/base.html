@@ -11,6 +11,7 @@
 {% block subnav %}
     <ul>
         {% if user.is_authenticated %}
+            <li><a href="{% url your_dances %} ">{% trans "Add a Dance" %}</a></li>        
             <li><a href="{% url your_dances %} ">{% trans "Your Dances" %}</a></li>
         {% endif %}
         <li><a href="{% url dance_list %}">{% trans "All Dances" %}</a></li>

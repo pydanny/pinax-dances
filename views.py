@@ -8,14 +8,23 @@ from django.contrib.auth.models import User
 from django.conf import settings
 
 from dances.models import Dance
+from dances.forms import DanceForm
 
 @login_required
-def your_dances(request, template_name="dance/your_dances.html"):
+def add(request, 
+                form_class=WallForm, 
+                template_name='dances/form.html'):
+                
+    
+
+
+@login_required
+def your_dances(request, template_name="dances/your_dances.html"):
     return render_to_response(template_name, {
         "groups": Dance.objects.filter(members=request.user).order_by("name"),
     }, context_instance=RequestContext(request))
     
-def dances(request, template_name="dance/dances.html"):
+def dances(request, template_name="dances/dances.html"):
     
     dances = Dance.objects.filter()
     

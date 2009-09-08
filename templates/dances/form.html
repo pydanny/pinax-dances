@@ -1,0 +1,14 @@
+{% extends "dances/base.html" %}
+
+{% load i18n %}
+{% load uni_form %}
+{% load pagination_tags %}
+
+{% block head_title %}{% blocktrans %}Dance Form{% endblocktrans %}{% endblock %}
+
+{% block body %}
+    <h1>{% trans "Dance Form" %}</h1>
+    
+    {{ form }}
+    
+{% endblock %}
