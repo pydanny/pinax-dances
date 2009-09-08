@@ -25,12 +25,11 @@ class DanceForm(forms.ModelForm):
     
     
     def __init__(self, creator, *args, **kwargs):
-        self.creator = creator
         
         super(DanceForm, self).__init__(*args, **kwargs)
     
     def save(self, commit = True):
-        return super(SampleForm, self).save(commit)
+        return super(DanceForm, self).save(commit)
     
     class Meta:
         model = Dance

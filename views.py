@@ -20,6 +20,7 @@ def add(request,
             form = form_class(request.user, request.POST)
             if form.is_valid():
                 dance = form.save(commit = False)
+                dance.creator = request.user
                 dance.save()
                 redirect_to = reverse("your_dances")
                 return HttpResponseRedirect(redirect_to)
@@ -29,8 +30,6 @@ def add(request,
     return render_to_response(template_name, {
         "form": form,
     }, context_instance=RequestContext(request))
-    
-
 
 @login_required
 def your_dances(request, template_name="dances/your_dances.html"):
