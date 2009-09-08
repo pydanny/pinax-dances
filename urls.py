@@ -5,13 +5,13 @@ from dance.models import Dance
 from groups.bridge import ContentBridge
 
 
-bridge = ContentBridge(BasicGroup, 'basic_groups')
+bridge = ContentBridge(BasicGroup, 'dances')
 
 
 urlpatterns = patterns('',
-    url(r'^your_groups/$', 'basic_groups.views.your_groups', name="your_groups"),
-    url(r'^$', 'basic_groups.views.groups', name="group_list"),
+    url(r'^your_dances/$', 'dances.views.your_dances', name="your_dances"),
+    url(r'^$', 'dances.views.dances', name="dance_list"),
 )
 
 
-urlpatterns += bridge.include_urls('topics.urls', r'^group/(?P<group_slug>[-\w]+)/topics/')
+urlpatterns += bridge.include_urls('topics.urls', r'^dance/(?P<dance_slug>[-\w]+)/wall/')
