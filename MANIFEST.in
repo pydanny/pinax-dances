@@ -2,4 +2,4 @@ include LICENSE.txt
 include MANIFEST.in
 include README
 recursive-include docs *
-recursive-include wall/templates *
+recursive-include dances/templates *
