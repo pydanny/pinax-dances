@@ -1,0 +1,31 @@
+{% extends "basic_groups/base.html" %}
+
+{% load i18n %}
+{% load pagination_tags %}
+
+{% block head_title %}{% trans "Your dances" %}{% endblock %}
+
+{% block body %}
+    
+    <h1>{% trans "Your dances" %}</h1>
+    
+    {% if dances %}
+        <p>{% trans "These are the dances you participate in." %}</p>
+        
+        {% autopaginate dances %}
+        
+        <dl>
+            {% for dance in dances %}
+                <dt>{% dance.title %}</dt>
+                <dd>{% dance.slug %}</dd>
+                <dd>{% dance.description|safe %}</dd> 
+            {% endfor %}
+        </dl>
+        
+        {% paginate %}
+        
+    {% else %}
+        <p>You are not a member of any dances yet.</p>
+    {% endif %}
+    
+{% endblock %}
