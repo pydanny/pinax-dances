@@ -17,7 +17,7 @@ def your_dances(request, template_name="dance/your_dances.html"):
     
 def dances(request, template_name="dance/dances.html"):
     
-    groups = BasicGroup.objects.filter()
+    dances = Dance.objects.filter()
     
     return render_to_response(template_name, {
         'dances': dances,

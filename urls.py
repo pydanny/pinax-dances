@@ -1,11 +1,11 @@
 from django.conf.urls.defaults import *
 
-from dance.models import Dance
+from dances.models import Dance
 
 from groups.bridge import ContentBridge
 
 
-bridge = ContentBridge(BasicGroup, 'dances')
+bridge = ContentBridge(Dance, 'dances')
 
 
 urlpatterns = patterns('',
