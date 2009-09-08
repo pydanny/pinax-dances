@@ -14,4 +14,4 @@ urlpatterns = patterns('',
 )
 
 
-urlpatterns += bridge.include_urls('topics.urls', r'^dance/(?P<dance_slug>[-\w]+)/wall/')
+urlpatterns += bridge.include_urls('wall.urls', r'^dance/(?P<group_slug>[-\w]+)/wall/')
