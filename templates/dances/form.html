@@ -9,6 +9,22 @@
 {% block body %}
     <h1>{% trans "Dance Form" %}</h1>
     
-    {{ form }}
+    {% with form.helper as helper %}
+        {% uni_form form helper %}
+    {% endwith %}
+
     
+{% endblock %}
+
+{% block extra_body %}
+	<script type="text/javascript">
+	
+    	$().ready(function() {
+    	    
+    	    // profile form handler things
+            $('#id_slug').focus();
+
+    	});
+	</script>   
+    	    
 {% endblock %}

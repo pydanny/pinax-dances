@@ -9,6 +9,7 @@ bridge = ContentBridge(Dance, 'dances')
 
 
 urlpatterns = patterns('',
+    url(r'^add_dance$', 'dances.views.add', name="dance_add"),
     url(r'^your_dances/$', 'dances.views.your_dances', name="your_dances"),
     url(r'^$', 'dances.views.dances', name="dance_list"),
 )

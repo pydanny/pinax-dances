@@ -12,7 +12,7 @@
     {% if dances %}
         <dl>
         {% for dance in dances %}
-            <dt>{{ dance.title }}</dt>
+            <dt>{{ dance.name }}</dt>
             <dd>{{ dance.slug }}</dd>
             <dd>{{ dance.description|safe }}</dd>            
         {% endfor %}
